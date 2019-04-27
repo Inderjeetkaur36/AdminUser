@@ -47,6 +47,7 @@ public class ViewProductActivity extends AppCompatActivity implements OnRecycler
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_product);
 
+        getSupportActionBar().setTitle("View Product");
         relativeLayout = findViewById(R.id.relative);
         recyclerView = findViewById(R.id.recyclerView);
         list = new ArrayList<>();
@@ -82,7 +83,7 @@ public class ViewProductActivity extends AppCompatActivity implements OnRecycler
                                 list.add(shoes);
                             }
 
-                            getSupportActionBar().setTitle("Total Products: ");
+                            getSupportActionBar().setTitle("Products " );
 
                             recyclerAdapter = new RecyclerAdapter(ViewProductActivity.this, R.layout.bluepop_item, list);
 
@@ -98,6 +99,7 @@ public class ViewProductActivity extends AppCompatActivity implements OnRecycler
                     }
                 });
     }
+
     void showCustomerDetails(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(shoes.name+" Details:");

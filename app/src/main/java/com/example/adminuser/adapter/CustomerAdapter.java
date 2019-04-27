@@ -83,6 +83,7 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.ViewHo
             txtEmail = itemView.findViewById(R.id.txtEmail);
             txtPassword = itemView.findViewById(R.id.txtPassword);
             txtAddress = itemView.findViewById(R.id.txtAddress);
+
         }
     }
 }

@@ -73,8 +73,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         Matcher matcher = Pattern.compile(validemail).matcher(email);
         if(matcher.matches()){
             Toast.makeText(getApplicationContext(),"Login",Toast.LENGTH_LONG).show();
-        } else {
-          Toast.makeText(getApplicationContext(),"Enter valid Email",Toast.LENGTH_LONG).show();
         }
         if (eTxtEmail.getText().toString().trim().length() == 0) {
             eTxtEmail.setError("Email is not entered");

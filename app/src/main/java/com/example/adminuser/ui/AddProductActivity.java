@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Intent;
 
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.adminuser.MainActivity;
 import com.example.adminuser.R;
 
 import com.example.adminuser.model.Shoes;
@@ -42,8 +44,14 @@ public class AddProductActivity extends AppCompatActivity {
     @BindView(R.id.eTxtColor)
     EditText eTxtColor;
 
+//    @BindView(R.id.eTxtUrl)
+//    EditText eTxtUrl;
+
     @BindView(R.id.buttonAddProduct)
     Button buttonAddProduct;
+
+    @BindView(R.id.buttonAddImage)
+    Button buttonaddImage;
 
     Shoes shoes;
     ContentResolver resolver;
@@ -67,6 +75,16 @@ public class AddProductActivity extends AppCompatActivity {
         progressDialog.setMessage("Please Wait..");
         progressDialog.setCancelable(false);
 
+        buttonaddImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(AddProductActivity.this, MainActivity.class);
+                startActivityForResult(intent,101);
+
+            }
+        });
+
         buttonAddProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,9 +94,11 @@ public class AddProductActivity extends AppCompatActivity {
                 shoes.name = eTxtName.getText().toString();
                 shoes.price = eTxtPrice.getText().toString();
                 shoes.color = eTxtColor.getText().toString();
+                //shoes.imageUrl = eTxtUrl.getText().toString();
 
                 if(Util.isInternetConnected(AddProductActivity.this)) {
                     progressDialog.show();
+
                     saveProductInFirebase();
                 }else{
                     Toast.makeText(AddProductActivity.this,"Please Connect to Internet",Toast.LENGTH_LONG).show();
@@ -94,7 +114,7 @@ public class AddProductActivity extends AppCompatActivity {
             eTxtId.setText(shoes.id);
             eTxtSize.setText(shoes.size);
             eTxtName.setText(shoes.name);
-            eTxtPrice.setText(shoes.price);
+            eTxtPrice.setText("₹ "+shoes.price);
             eTxtColor.setText(shoes.color);
             buttonAddProduct.setText("Update Products");
 
@@ -149,5 +169,15 @@ public class AddProductActivity extends AppCompatActivity {
         eTxtName.setText("");
         eTxtPrice.setText("");
         eTxtColor.setText("");
+     //   eTxtUrl.setText("");
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if(requestCode == 101 && resultCode == 201) {
+            String Url = data.getStringExtra("KeyUrl");
+
+          //  eTxtUrl.setText(Url);
+        }
     }
 }

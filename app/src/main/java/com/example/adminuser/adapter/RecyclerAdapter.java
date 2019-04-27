@@ -56,7 +56,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
         holder.imageView.setBackgroundResource(shoes.image);
         holder.txtName.setText(shoes.name);
-        holder.txtPrice.setText(shoes.price);
+        holder.txtPrice.setText("₹ "+shoes.price);
         holder.txtId.setText(shoes.id);
         holder.txtColor.setText(shoes.color);
         holder.txtSize.setText(shoes.size);

@@ -28,7 +28,7 @@ public class SplashActivity extends AppCompatActivity {
         public void handleMessage(Message msg) {
             if(msg.what == 101) {
                 if (Util.isInternetConnected(SplashActivity.this)) {
-                    Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                    Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
                     startActivity(intent);
                     finish();
                 } else {

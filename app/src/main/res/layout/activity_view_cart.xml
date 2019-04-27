@@ -4,8 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/recyclerView"
-    android:padding="16dp"
-    tools:context=".ui.ViewProductActivity">
+    tools:context=".ui.ViewCartActivity">
 
 </android.support.v7.widget.RecyclerView>

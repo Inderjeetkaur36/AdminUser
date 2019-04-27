@@ -69,6 +69,8 @@ public class AdminUserActivity extends AppCompatActivity implements View.OnClick
 
         }else{
 
+            Intent intent = new Intent(AdminUserActivity.this,ViewOrderActivity.class);
+            startActivity(intent);
         }
     }
 

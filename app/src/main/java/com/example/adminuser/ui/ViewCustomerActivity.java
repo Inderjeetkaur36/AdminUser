@@ -1,5 +1,6 @@
 package com.example.adminuser.ui;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -60,7 +61,7 @@ public class ViewCustomerActivity extends AppCompatActivity implements OnRecycle
 
     void fetchCustomersFromFirebase() {
 
-        db.collection("Customers").get()
+        db.collection("Persons").get()
                 .addOnCompleteListener(this, new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
@@ -78,7 +79,7 @@ public class ViewCustomerActivity extends AppCompatActivity implements OnRecycle
                                 list.add(customer);
                             }
 
-                            getSupportActionBar().setTitle("Total Customers");
+                            getSupportActionBar().setTitle("Total Customer :" +list.size());
 
                             customerAdapter = new CustomerAdapter(ViewCustomerActivity.this, R.layout.customer_item, list);
                             customerAdapter.setOnRecyclerCusItemClickListener(ViewCustomerActivity.this);
@@ -98,5 +99,8 @@ public class ViewCustomerActivity extends AppCompatActivity implements OnRecycle
     public void ItemClick(int position) {
         this.position = position ;
         customer = list.get(position);
+
+        //Intent intent = new Intent(ViewCustomerActivity.this,ViewCartActivity.class);
+        //startActivity(intent);
     }
 }

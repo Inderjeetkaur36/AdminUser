@@ -18,7 +18,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="@dimen/margin_2"/>
+            android:layout_marginBottom="@dimen/margin_2"
+            android:background="@drawable/ic_launcher_background"/>
 
         <LinearLayout
             android:id="@+id/layoutSignin"
@@ -89,19 +90,25 @@
                 android:autoLink="web"
                 tools:text="http://www.example.com/?id=UAOJNVKBMQUGPYZKCQZRZKJEXRCRXMRSMFBZBMBODWUSVTDXJCPJMYOKQQBODSGPYHPZUR" />
 
-            <TextView
-                style="@style/TextAppearance.AppCompat.Medium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/margin_1"
-                android:layout_marginTop="@dimen/margin_2"
-                android:text="@string/label_download" />
+            <!--<Button-->
+            <!--android:id="@+id/buttonUrl"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Send URL" />-->
 
-            <Button
-                android:id="@+id/buttonDownload"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/download" />
+            <!--<TextView-->
+                <!--style="@style/TextAppearance.AppCompat.Medium"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginBottom="@dimen/margin_1"-->
+                <!--android:layout_marginTop="@dimen/margin_2"-->
+                <!--android:text="@string/label_download" />-->
+
+            <!--<Button-->
+                <!--android:id="@+id/buttonDownload"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="@string/download" />-->
         </LinearLayout>
 
     </LinearLayout>

@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     android:orientation="vertical"
-    android:elevation="10dp"
-    app:cardCornerRadius="40dp"
+    android:elevation="6dp"
+    app:cardCornerRadius="10dp"
     tools:context=".ui.AddProductActivity">
 
     <LinearLayout
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:hint="Shoe Id" />
 
         <EditText
@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:layout_gravity="center"
             android:hint="Shoe Size" />
 
@@ -50,8 +50,8 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:hint="Shoe Name" />
+            android:layout_marginTop="15dp"
+            android:hint="Shoe Type" />
 
         <EditText
             android:id="@+id/eTxtPrice"
@@ -59,7 +59,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:hint="Shoe Price" />
 
         <EditText
@@ -68,15 +68,34 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:hint="Shoe Color" />
+
+        <!--<EditText-->
+            <!--android:id="@+id/eTxtUrl"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:inputType="textPersonName"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_marginTop="15dp"-->
+            <!--android:hint="Image Url" />-->
+
+        <Button
+            android:id="@+id/buttonAddImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/colorTwo"
+            android:background="@color/colorOne"
+            android:text="UPLOAD IMAGE" />
 
         <Button
             android:id="@+id/buttonAddProduct"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:textColor="@color/colorTwo"
             android:background="@color/colorOne"
             android:text="@string/add" />

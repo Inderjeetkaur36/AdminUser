@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Uri mDownloadUrl = null;
     private Uri mFileUri = null;
 
+    TextView txtUrl;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,10 +52,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
 
+        txtUrl = findViewById(R.id.pictureDownloadUri);
+
         // Click listeners
         findViewById(R.id.buttonCamera).setOnClickListener(this);
         findViewById(R.id.buttonSignIn).setOnClickListener(this);
-        findViewById(R.id.buttonDownload).setOnClickListener(this);
+       // findViewById(R.id.buttonUrl).setOnClickListener(this);
+       // findViewById(R.id.buttonDownload).setOnClickListener(this);
 
         // Restore instance state
         if (savedInstanceState != null) {
@@ -303,8 +308,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             launchCamera();
         } else if (i == R.id.buttonSignIn) {
             signInAnonymously();
-        } else if (i == R.id.buttonDownload) {
-            beingDownload();
+        //} else if (i == R.id.buttonUrl) {
+            //beingDownload();
+
+//            String url = txtUrl.getText().toString();
+//
+//            Intent intent = new Intent();
+//            intent.putExtra("KeyUrl",url);
+//            setResult(201,intent);
+//            finish();
         }
     }
 }

@@ -19,7 +19,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.ViewOrderActivity"></activity>
+        <activity android:name=".ui.ViewCartActivity"></activity>
+        <activity android:name=".views.FirstActivity" />
+        <activity android:name=".ui.ViewOrderActivity" />
         <activity android:name=".ui.ViewCustomerActivity" />
 
         <service
