@@ -71,14 +71,14 @@
             android:layout_marginTop="15dp"
             android:hint="Shoe Color" />
 
-        <!--<EditText-->
-            <!--android:id="@+id/eTxtUrl"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:inputType="textPersonName"-->
-            <!--android:layout_gravity="center"-->
-            <!--android:layout_marginTop="15dp"-->
-            <!--android:hint="Image Url" />-->
+        <EditText
+            android:id="@+id/eTxtUrl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:hint="Image Url" />
 
         <Button
             android:id="@+id/buttonAddImage"

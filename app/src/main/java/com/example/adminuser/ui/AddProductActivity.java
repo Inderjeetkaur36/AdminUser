@@ -44,8 +44,8 @@ public class AddProductActivity extends AppCompatActivity {
     @BindView(R.id.eTxtColor)
     EditText eTxtColor;
 
-//    @BindView(R.id.eTxtUrl)
-//    EditText eTxtUrl;
+    @BindView(R.id.eTxtUrl)
+    EditText eTxtUrl;
 
     @BindView(R.id.buttonAddProduct)
     Button buttonAddProduct;
@@ -94,7 +94,7 @@ public class AddProductActivity extends AppCompatActivity {
                 shoes.name = eTxtName.getText().toString();
                 shoes.price = eTxtPrice.getText().toString();
                 shoes.color = eTxtColor.getText().toString();
-                //shoes.imageUrl = eTxtUrl.getText().toString();
+                shoes.imageUrl = eTxtUrl.getText().toString();
 
                 if(Util.isInternetConnected(AddProductActivity.this)) {
                     progressDialog.show();
@@ -169,7 +169,7 @@ public class AddProductActivity extends AppCompatActivity {
         eTxtName.setText("");
         eTxtPrice.setText("");
         eTxtColor.setText("");
-     //   eTxtUrl.setText("");
+        eTxtUrl.setText("");
     }
 
     @Override
@@ -177,7 +177,7 @@ public class AddProductActivity extends AppCompatActivity {
         if(requestCode == 101 && resultCode == 201) {
             String Url = data.getStringExtra("KeyUrl");
 
-          //  eTxtUrl.setText(Url);
+            eTxtUrl.setText(Url);
         }
     }
 }

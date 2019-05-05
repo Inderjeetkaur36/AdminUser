@@ -1,7 +1,10 @@
 package com.example.adminuser.adapter;
+import com.bumptech.glide.Glide;
 import com.example.adminuser.R;
 import com.example.adminuser.listener.OnRecyclerItemClickListener;
 import com.example.adminuser.model.Shoes;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -54,12 +57,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
         Shoes shoes = objects.get(position);
 
-        holder.imageView.setBackgroundResource(shoes.image);
+     //   holder.imageView.setBackgroundResource(Integer.parseInt(shoes.imageUrl));
         holder.txtName.setText(shoes.name);
         holder.txtPrice.setText("₹ "+shoes.price);
         holder.txtId.setText(shoes.id);
         holder.txtColor.setText(shoes.color);
         holder.txtSize.setText(shoes.size);
+
+        Glide.with(context).load(shoes.imageUrl).into(holder.imageView);
     }
 
     @Override
@@ -78,6 +83,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+
 
             imageView = itemView.findViewById(R.id.imageView);
             txtName= itemView.findViewById(R.id.textViewName);

@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Click listeners
         findViewById(R.id.buttonCamera).setOnClickListener(this);
         findViewById(R.id.buttonSignIn).setOnClickListener(this);
-       // findViewById(R.id.buttonUrl).setOnClickListener(this);
+        findViewById(R.id.buttonUrl).setOnClickListener(this);
        // findViewById(R.id.buttonDownload).setOnClickListener(this);
 
         // Restore instance state
@@ -308,15 +308,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             launchCamera();
         } else if (i == R.id.buttonSignIn) {
             signInAnonymously();
-        //} else if (i == R.id.buttonUrl) {
-            //beingDownload();
+        } else if (i == R.id.buttonUrl) {
+            beingDownload();
 
-//            String url = txtUrl.getText().toString();
-//
-//            Intent intent = new Intent();
-//            intent.putExtra("KeyUrl",url);
-//            setResult(201,intent);
-//            finish();
+            String url = txtUrl.getText().toString();
+
+            Intent intent = new Intent();
+            intent.putExtra("KeyUrl",url);
+            setResult(201,intent);
+            finish();
         }
     }
 }
